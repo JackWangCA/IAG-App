@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:iagapp/constants/theme.dart';
 import 'package:iagapp/constants/themeNotifier.dart';
+import 'package:iagapp/welcomePage.dart';
 import 'package:provider/provider.dart';
 
 import 'homePage.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
             darkTheme: darkTheme,
             theme: lightTheme,
             debugShowCheckedModeBanner: false,
-            home: const HomePage(title: 'IAG'),
+            home: WelcomePage(),
           );
         },
       );

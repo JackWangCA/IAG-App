@@ -1,40 +1,5 @@
 import 'package:flutter/material.dart';
 
-ThemeData darkTheme = ThemeData(
-  brightness: Brightness.dark,
-  visualDensity: VisualDensity.comfortable,
-  appBarTheme: const AppBarTheme(
-    foregroundColor: Colors.white70,
-    backgroundColor: Colors.black,
-  ),
-  bottomAppBarColor: Colors.black,
-  elevatedButtonTheme: ElevatedButtonThemeData(
-    style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-        return Colors.black;
-      }),
-    ),
-  ),
-  floatingActionButtonTheme: const FloatingActionButtonThemeData(
-    foregroundColor: Colors.black,
-    backgroundColor: Colors.tealAccent,
-  ),
-  // textTheme: const TextTheme(
-  //   headline1: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  //   headline2: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  //   headline3: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  //   headline4: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  // ),
-);
 ThemeData lightTheme = ThemeData(
   brightness: Brightness.light,
   visualDensity: VisualDensity.comfortable,
@@ -43,30 +8,68 @@ ThemeData lightTheme = ThemeData(
     backgroundColor: Colors.white,
   ),
   bottomAppBarColor: Colors.white,
-  elevatedButtonTheme: ElevatedButtonThemeData(
+  textButtonTheme: TextButtonThemeData(
     style: ButtonStyle(
-      backgroundColor: MaterialStateProperty.resolveWith<Color?>(
-          (Set<MaterialState> states) {
-        return Colors.grey;
-      }),
+      backgroundColor: MaterialStateProperty.all<Color>(Colors.black),
+      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.symmetric(vertical: 20, horizontal: 40)),
     ),
   ),
   floatingActionButtonTheme: const FloatingActionButtonThemeData(
     foregroundColor: Colors.white,
     backgroundColor: Colors.black,
   ),
-  // textTheme: const TextTheme(
-  //   headline1: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  //   headline2: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  //   headline3: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  //   headline4: TextStyle(
-  //     color: Colors.white,
-  //   ),
-  // ),
+  textTheme: const TextTheme(
+    headline1: TextStyle(
+      color: Colors.black,
+    ),
+    headline2: TextStyle(
+      color: Colors.black,
+      fontSize: 20.0,
+    ),
+    headline3: TextStyle(
+      color: Colors.white,
+      fontSize: 15.0,
+    ),
+    headline4: TextStyle(
+      color: Colors.black,
+    ),
+  ),
+);
+
+ThemeData darkTheme = ThemeData(
+  brightness: Brightness.dark,
+  visualDensity: VisualDensity.comfortable,
+  appBarTheme: const AppBarTheme(
+    foregroundColor: Colors.white70,
+    backgroundColor: Colors.black,
+  ),
+  bottomAppBarColor: Colors.black,
+  textButtonTheme: TextButtonThemeData(
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.all<Color>(Colors.white),
+      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+          const EdgeInsets.symmetric(vertical: 20, horizontal: 40)),
+    ),
+  ),
+  floatingActionButtonTheme: const FloatingActionButtonThemeData(
+    foregroundColor: Colors.black,
+    backgroundColor: Colors.tealAccent,
+  ),
+  textTheme: const TextTheme(
+    headline1: TextStyle(
+      color: Colors.white,
+    ),
+    headline2: TextStyle(
+      color: Colors.white,
+      fontSize: 20.0,
+    ),
+    headline3: TextStyle(
+      color: Colors.black,
+      fontSize: 15.0,
+    ),
+    headline4: TextStyle(
+      color: Colors.white,
+    ),
+  ),
 );
