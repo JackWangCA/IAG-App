@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iagapp/constants/themeNotifier.dart';
+import 'package:iagapp/themeNotifier.dart';
 import 'package:provider/provider.dart';
 import 'package:settings_ui/settings_ui.dart';
 
