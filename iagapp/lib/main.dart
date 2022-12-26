@@ -28,18 +28,17 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) => ChangeNotifierProvider(
         create: (context) => ThemeProvider(),
-        builder: (context, _) {
-          final themeProvider = Provider.of<ThemeProvider>(context);
+        child: Consumer<ThemeProvider>(
+            builder: (context, ThemeProvider provider, child) {
           WidgetsFlutterBinding.ensureInitialized();
           SharedPreferencesUtil.getData<String>('themeMode').then((value) {
             setState(() {
-              themeProvider.themeMode =
-                  themeProvider.getThemeModeFromString(value);
+              provider.themeMode = provider.getThemeModeFromString(value);
             });
           });
           return MaterialApp(
             title: 'IAG',
-            themeMode: themeProvider.themeMode,
+            themeMode: provider.themeMode,
             darkTheme: darkTheme,
             theme: lightTheme,
             debugShowCheckedModeBanner: false,
@@ -47,6 +46,6 @@ class _MyAppState extends State<MyApp> {
               title: 'IAG',
             ),
           );
-        },
+        }),
       );
 }
